@@ -1,18 +1,18 @@
 print("Welcome to your wallet")
 
 
-# Get user inputs
+# To get user inputs
 investor_name = input("Enter your name: ")
 amount_to_invest = float(input("Enter amount to invest: "))
 
-# Calculate wallet balance
+# To calculate wallet balance
 wallet_balance  = (amount_to_invest * 0.5) + amount_to_invest
 print("Wallet balance: ", wallet_balance)
 
 # Allow investor to withdraw funds
 amount_to_withdraw = float(input("Enter amount to withdraw: "))
 
-# Calculate final balance
+# To calculate final balance
 if amount_to_withdraw >= wallet_balance:
     print("Insufficient Funds")
 else:
