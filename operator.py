@@ -1,20 +1,22 @@
-#get your user input
-investor_name = input("Enter investors name: " )
-amount_to_invest = input("Enter amount to invest: ")
+print("Welcome to your wallet")
 
-#To calcute wallet balance with 50% increase 
-wallet_balance = amount_to_invest * 0.5
-print("wallet_balance", wallet_balance)
 
-#Allow investor to withdraw funds
+# Get user inputs
+investor_name = input("Enter your name: ")
+amount_to_invest = float(input("Enter amount to invest: "))
+
+# Calculate wallet balance
+wallet_balance  = (amount_to_invest * 0.5) + amount_to_invest
+print("Wallet balance: ", wallet_balance)
+
+# Allow investor to withdraw funds
 amount_to_withdraw = float(input("Enter amount to withdraw: "))
 
-#calculate final balance with 7% vat deduction
-if amount_to_withdraw > wallet_balance:
-    print("insufficient funds")
+# Calculate final balance
+if amount_to_withdraw >= wallet_balance:
+    print("Insufficient Funds")
 else:
     vat_deduction = 0.07 * wallet_balance
-    amount_withdrawn = (amount_to_withdraw + vat_deduction)
-    print("amount deducted successfully, your wallet has been debited with", amount_withdrawn)
-    print("final balance", wallet_balance)
-    
+    wallet_balance -= (amount_to_withdraw + vat_deduction)
+    print("Withdrawal successful, your account has been debited with", amount_to_withdraw, "and 7% VAT has been deducted.")
+    print("Final balance: ", wallet_balance)
